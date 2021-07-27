@@ -1,0 +1,25 @@
+micronaut:
+  application:
+    name: sub
+  server:
+    port: 8080
+
+
+
+nats:
+  addresses: ${nats_host:localhost}
+  username: ${nats_username:guest}
+  password: ${nats_password:guest}
+
+cassandra:
+  default:
+    basic:
+      contact-points:
+        - localhost:9042
+      session-keyspace: clube
+      load-balancing-policy:
+        local-datacenter: datacenter1
+
+endpoints:
+  health:
+    enabled: true
